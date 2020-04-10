@@ -6,8 +6,6 @@ import './menu-item.styles.scss';
 
 const MenuItem = ({ item, history,match }) => {
 
-    console.log(`${match.url}${item.linkUrl}`)
-
     return (
         <div className={`${item.size} menu-item`}>
             <div className='background-image' style={{ backgroundImage: `url(${item.imageUrl})` }}></div>
