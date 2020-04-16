@@ -1,6 +1,6 @@
 .menu-item {
-    min-width: 30%;
     height: 240px;
+    min-width: 30%;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
@@ -11,7 +11,6 @@
   
     &:hover {
       cursor: pointer;
-  
       & .background-image {
         transform: scale(1.1);
         transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -32,6 +31,13 @@
   
     &:last-child {
       margin-left: 7.5px;
+    }
+
+    @media screen and (max-width: 800px) {
+      height: 200px;
+      &.large {
+        height: 200px;
+      }
     }
   
     .background-image {
@@ -55,7 +61,7 @@
   
       .title {
         font-weight: bold;
-        margin: 0 6px 0;
+        margin-bottom: 6px;
         font-size: 22px;
         color: #4a4a4a;
       }

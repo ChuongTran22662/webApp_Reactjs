@@ -1,0 +1,22 @@
+.sign-dropdown {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    border: 1px solid black;
+    background-color: white;
+    top: 50px;
+    right: 17px;
+    z-index: 5;
+    justify-content: space-between;
+
+    .option{
+        align-items: center;
+    }
+
+    .option:hover{
+        color: grey;
+    }
+  }

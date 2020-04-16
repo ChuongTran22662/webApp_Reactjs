@@ -1,5 +1,8 @@
+import UserActionTypes from "./user.types";
+
 const INITIAL_STATE = {
-    currentUser: null
+    currentUser: null,
+    hiddenSign: true
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -8,6 +11,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 currentUser: action.payload
+            }
+        case UserActionTypes.TOOGLE_SIGN:
+            return {
+                ...state,
+                hiddenSign: !state.hiddenSign
             }
         default:
             return state;

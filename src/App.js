@@ -1,16 +1,17 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './App.css';
+import './global.styles.scss'
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import CheckoutPage from './pages/checkout/checkout.component';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selector'
+import SignIn from './pages/sign-in/sign-in.component';
+import SignUp from './pages/sign-up/sign-up.component';
 
 //add data to firebase
 //import { addCollectionAndDocuments } from './firebase/firebase.utils';
@@ -65,7 +66,8 @@ class App extends React.Component {
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
-          <Route path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
+          <Route path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SignIn />)} />
+          <Route path='/signup' render={() => currentUser ? (<Redirect to='/' />) : (<SignUp />)} />
         </Switch>
       </div>
     )
